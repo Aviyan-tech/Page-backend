@@ -263,5 +263,22 @@ async def summarize_post(post_id: int, db: Session = Depends(get_db)):
     db_post.updated_at = func.now() # trigger updated_at time update
     db.commit()
     db.refresh(db_post)
+    from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://tghotnews.com",
+        "https://www.tghotnews.com",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Your routes below...
     
     return db_post
