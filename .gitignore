@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+ENV/
+
+# Databases
+*.db
+*.sqlite3
+
+# Environment variables / Credentials
+.env
+app/.env
+
+# IDEs
+.idea/
+.vscode/
+.agents/
+.pytest_cache/
