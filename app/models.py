@@ -1,4 +1,5 @@
 import datetime
+# pyrefly: ignore [missing-import]
 from sqlalchemy import Column, Integer, String, Text, DateTime
 from app.database import Base
 
@@ -12,5 +13,4 @@ class Post(Base):
     status = Column(String, nullable=False, default="draft")
     views = Column(Integer, nullable=False, default=0)
     created_at = Column(DateTime, nullable=False, default=datetime.datetime.utcnow)
-    updated_at = Column(DateTime, nullable=True, onupdate=datetime.datetime.utcnow)
     ai_summary = Column(Text, nullable=True)
